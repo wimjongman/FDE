@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: com.remainsoftware.fde.model.edit;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: com.remainsoftware.fde.model.provider.FdeEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: com.remainsoftware.fde.model.provider
+Require-Bundle: org.eclipse.core.runtime,
+ com.remainsoftware.fde.model;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/com.remainsoftware.fde.model/src" creationSubmenus="true"
+    modelPluginID="com.remainsoftware.fde.model" modelName="Fde" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>fde.ecore</foreignModel>
+  <genPackages prefix="Model" basePackage="com.remainsoftware.fde" disposableProviderFactory="true"
+      multipleEditorPages="false" childCreationExtenders="true" ecorePackage="fde.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fde.ecore#//OS">
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/aix"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/hpux"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/linux"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/macosx"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/qnx"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/solaris"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//OS/win32"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fde.ecore#//ARCH">
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/ia64"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/ia64_32"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/PA_RISC"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/ppc"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/sparc"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/x86"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//ARCH/x86_64"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fde.ecore#//WS">
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/carbon"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/cocoa"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/gtk"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/motif"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/photon"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/win32"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//WS/wpf"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="fde.ecore#//MATCH_RULE">
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//MATCH_RULE/Equivalent"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//MATCH_RULE/Compatible"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//MATCH_RULE/Perfect"/>
+      <genEnumLiterals ecoreEnumLiteral="fde.ecore#//MATCH_RULE/GreaterorEqual"/>
+    </genEnums>
+    <genClasses ecoreClass="fde.ecore#//Version">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Version/version"/>
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference fde.ecore#//Version/features"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//Version/bundles"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//Version/fragments"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//Manifest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Manifest/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Manifest/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Manifest/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Manifest/vendor"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//Feature">
+      <genFeatures children="true" createChild="true" propertyDescription="Description"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/featureDescription"/>
+      <genFeatures children="true" createChild="true" propertyDescription="Copyright"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/copyrightNotice"/>
+      <genFeatures children="true" createChild="true" propertyDescription="License Agreement"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/licenseAgreement"/>
+      <genFeatures children="true" createChild="true" propertyDescription="Site to Visit"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/sitesToVisit"/>
+      <genFeatures children="true" createChild="true" propertyDescription="Included Bundle or Fragment"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/includedBundlesAndFragments"/>
+      <genFeatures children="true" createChild="true" propertyDescription="Included Feature"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/includedFeatures"/>
+      <genFeatures children="true" createChild="true" propertyDescription="Required Feature or Bundle"
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Feature/requiredFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//Bundle"/>
+    <genClasses ecoreClass="fde.ecore#//Fragment">
+      <genFeatures notify="false" children="true" createChild="true" propertyDescription=""
+          propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//Fragment/parentBundle"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//Description">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Description/url"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute fde.ecore#//Description/description"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//SiteToVisit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//SiteToVisit/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//SiteToVisit/url"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//LicenseAgreement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//LicenseAgreement/localLicense"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//LicenseAgreement/sharedLicense"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//IncludedFeature">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference fde.ecore#//IncludedFeature/included"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedFeature/featureName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedFeature/version"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//IncludedFeature/bree"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//Required">
+      <genFeatures notify="false" children="true" createChild="true" propertySortChoices="true"
+          ecoreFeature="ecore:EReference fde.ecore#//Required/required"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Required/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Required/matchRule"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//IncludedBundleOrFragment">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//IncludedBundleOrFragment/included"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/version"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/downloadSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/installationSize"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/unpack"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//IncludedBundleOrFragment/bree"/>
+    </genClasses>
+    <genClasses ecoreClass="fde.ecore#//BREE">
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/windowingSystem"/>
+      <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/architecture"/>
+      <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/operatingSystem"/>
+      <genFeatures children="true" createChild="true" propertyDescription="" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/language"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

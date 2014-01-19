@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.remainsoftware.fde.workbench.feature_0.1.0.qualifier.jar" id="com.remainsoftware.fde.workbench.feature" version="0.1.0.qualifier">
+      <category name="workbench"/>
+   </feature>
+   <category-def name="workbench" label="FDE Workbench Feature">
+      <description>
+         Use this if you want to install FDE in your Eclipse IDE.
+      </description>
+   </category-def>
+</site>

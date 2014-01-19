@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="model" nsURI="http://www.eclipse.org/e4/fde/0.1.0" nsPrefix="com.remainsoftware.fde">
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="features" upperBound="-1"
+        eType="#//Feature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundles" upperBound="-1"
+        eType="#//Bundle" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fragments" upperBound="-1"
+        eType="#//Fragment" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Manifest">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="vendor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Feature" eSuperTypes="#//Manifest">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="featureDescription" eType="#//Description"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="copyrightNotice" eType="#//Description"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="licenseAgreement" eType="#//LicenseAgreement"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sitesToVisit" upperBound="-1"
+        eType="#//SiteToVisit" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includedBundlesAndFragments"
+        upperBound="-1" eType="#//IncludedBundleOrFragment"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="includedFeatures" upperBound="-1"
+        eType="#//IncludedFeature" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredFeatures" upperBound="-1"
+        eType="#//Required"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bundle" eSuperTypes="#//Manifest"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fragment" eSuperTypes="#//Manifest">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentBundle" lowerBound="1"
+        eType="#//Bundle" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SiteToVisit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LicenseAgreement" eSuperTypes="#//Description">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="localLicense" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sharedLicense" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncludedFeature">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="included" lowerBound="1"
+        eType="#//Feature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="featureName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bree" eType="#//BREE" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Required">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="required" lowerBound="1"
+        eType="#//Manifest"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchRule" eType="#//MATCH_RULE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IncludedBundleOrFragment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="included" lowerBound="1"
+        eType="#//Manifest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="downloadSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="installationSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unpack" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bree" eType="#//BREE" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OS">
+    <eLiterals name="aix" literal="aix"/>
+    <eLiterals name="hpux" value="1" literal="hpux"/>
+    <eLiterals name="linux" value="2" literal="linux"/>
+    <eLiterals name="macosx" value="3" literal="macosx"/>
+    <eLiterals name="qnx" value="4" literal="qnx"/>
+    <eLiterals name="solaris" value="5" literal="solaris"/>
+    <eLiterals name="win32" value="6" literal="win32"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ARCH">
+    <eLiterals name="ia64" literal="ia64"/>
+    <eLiterals name="ia64_32" value="1" literal="ia64_32"/>
+    <eLiterals name="PA_RISC" value="2" literal="PA_RISC"/>
+    <eLiterals name="ppc" value="3" literal="ppc"/>
+    <eLiterals name="sparc" value="4" literal="sparc"/>
+    <eLiterals name="x86" value="5" literal="x86"/>
+    <eLiterals name="x86_64" value="6" literal="x86_64"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WS">
+    <eLiterals name="carbon" literal="carbon"/>
+    <eLiterals name="cocoa" value="1" literal="cocoa"/>
+    <eLiterals name="gtk" value="2" literal="gtk"/>
+    <eLiterals name="motif" value="3" literal="motif"/>
+    <eLiterals name="photon" value="4" literal="photon"/>
+    <eLiterals name="win32" value="5" literal="win32"/>
+    <eLiterals name="wpf" value="6" literal="wpf"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MATCH_RULE">
+    <eLiterals name="Equivalent" literal="Equivalent"/>
+    <eLiterals name="Compatible" value="1" literal="Compatible"/>
+    <eLiterals name="Perfect" value="2" literal="Perfect"/>
+    <eLiterals name="GreaterorEqual" value="3" literal="Greater or Equal"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BREE">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowingSystem" upperBound="-1"
+        eType="#//WS"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="architecture" upperBound="-1"
+        eType="#//ARCH"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operatingSystem" upperBound="-1"
+        eType="#//OS"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

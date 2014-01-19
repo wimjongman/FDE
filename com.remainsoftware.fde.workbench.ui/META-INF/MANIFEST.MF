@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FDE Workbench Integration UI
+Bundle-SymbolicName: com.remainsoftware.fde.workbench.ui;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Remain Software
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.ui,
+ com.remainsoftware.fde.ui;bundle-version="0.1.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
