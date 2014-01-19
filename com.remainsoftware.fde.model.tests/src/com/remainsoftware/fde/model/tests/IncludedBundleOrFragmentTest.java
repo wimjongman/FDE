@@ -2,11 +2,9 @@
  */
 package com.remainsoftware.fde.model.tests;
 
-import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import com.remainsoftware.fde.model.IncludedBundleOrFragment;
+import junit.framework.TestCase;
+import junit.textui.TestRunner;
 import com.remainsoftware.fde.model.ModelFactory;
 
 /**

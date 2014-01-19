@@ -268,7 +268,7 @@ public interface ModelPackage extends EPackage {
 	int FEATURE__SITES_TO_VISIT = MANIFEST_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Included Bundles And Fragments</b></em>' reference list.
+	 * The feature id for the '<em><b>Included Bundles And Fragments</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -393,7 +393,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT__ID = MANIFEST__ID;
+	int FRAGMENT__ID = BUNDLE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -402,7 +402,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT__VERSION = MANIFEST__VERSION;
+	int FRAGMENT__VERSION = BUNDLE__VERSION;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -411,7 +411,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT__NAME = MANIFEST__NAME;
+	int FRAGMENT__NAME = BUNDLE__NAME;
 
 	/**
 	 * The feature id for the '<em><b>Vendor</b></em>' attribute.
@@ -420,7 +420,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT__VENDOR = MANIFEST__VENDOR;
+	int FRAGMENT__VENDOR = BUNDLE__VENDOR;
 
 	/**
 	 * The feature id for the '<em><b>Parent Bundle</b></em>' containment reference.
@@ -429,7 +429,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT__PARENT_BUNDLE = MANIFEST_FEATURE_COUNT + 0;
+	int FRAGMENT__PARENT_BUNDLE = BUNDLE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Fragment</em>' class.
@@ -438,7 +438,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT_FEATURE_COUNT = MANIFEST_FEATURE_COUNT + 1;
+	int FRAGMENT_FEATURE_COUNT = BUNDLE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Fragment</em>' class.
@@ -447,7 +447,7 @@ public interface ModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FRAGMENT_OPERATION_COUNT = MANIFEST_OPERATION_COUNT + 0;
+	int FRAGMENT_OPERATION_COUNT = BUNDLE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.impl.DescriptionImpl <em>Description</em>}' class.
@@ -735,13 +735,13 @@ public interface ModelPackage extends EPackage {
 	int INCLUDED_BUNDLE_OR_FRAGMENT = 10;
 
 	/**
-	 * The feature id for the '<em><b>Included</b></em>' containment reference.
+	 * The feature id for the '<em><b>Bundle Or Fragment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED = 0;
+	int INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -1074,10 +1074,10 @@ public interface ModelPackage extends EPackage {
 	EReference getFeature_SitesToVisit();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.remainsoftware.fde.model.Feature#getIncludedBundlesAndFragments <em>Included Bundles And Fragments</em>}'.
+	 * Returns the meta object for the containment reference list '{@link com.remainsoftware.fde.model.Feature#getIncludedBundlesAndFragments <em>Included Bundles And Fragments</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Included Bundles And Fragments</em>'.
+	 * @return the meta object for the containment reference list '<em>Included Bundles And Fragments</em>'.
 	 * @see com.remainsoftware.fde.model.Feature#getIncludedBundlesAndFragments()
 	 * @see #getFeature()
 	 * @generated
@@ -1341,15 +1341,15 @@ public interface ModelPackage extends EPackage {
 	EClass getIncludedBundleOrFragment();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getIncluded <em>Included</em>}'.
+	 * Returns the meta object for the reference '{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getBundleOrFragment <em>Bundle Or Fragment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Included</em>'.
-	 * @see com.remainsoftware.fde.model.IncludedBundleOrFragment#getIncluded()
+	 * @return the meta object for the reference '<em>Bundle Or Fragment</em>'.
+	 * @see com.remainsoftware.fde.model.IncludedBundleOrFragment#getBundleOrFragment()
 	 * @see #getIncludedBundleOrFragment()
 	 * @generated
 	 */
-	EReference getIncludedBundleOrFragment_Included();
+	EReference getIncludedBundleOrFragment_BundleOrFragment();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getVersion <em>Version</em>}'.
@@ -1650,7 +1650,7 @@ public interface ModelPackage extends EPackage {
 		EReference FEATURE__SITES_TO_VISIT = eINSTANCE.getFeature_SitesToVisit();
 
 		/**
-		 * The meta object literal for the '<em><b>Included Bundles And Fragments</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Included Bundles And Fragments</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1866,12 +1866,12 @@ public interface ModelPackage extends EPackage {
 		EClass INCLUDED_BUNDLE_OR_FRAGMENT = eINSTANCE.getIncludedBundleOrFragment();
 
 		/**
-		 * The meta object literal for the '<em><b>Included</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Bundle Or Fragment</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED = eINSTANCE.getIncludedBundleOrFragment_Included();
+		EReference INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT = eINSTANCE.getIncludedBundleOrFragment_BundleOrFragment();
 
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.

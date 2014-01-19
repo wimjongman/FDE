@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FragmentImpl extends ManifestImpl implements Fragment {
+public class FragmentImpl extends BundleImpl implements Fragment {
 	/**
 	 * The cached value of the '{@link #getParentBundle() <em>Parent Bundle</em>}' containment reference.
 	 * <!-- begin-user-doc -->

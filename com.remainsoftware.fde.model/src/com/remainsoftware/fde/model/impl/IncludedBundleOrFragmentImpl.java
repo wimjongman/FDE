@@ -3,16 +3,13 @@
 package com.remainsoftware.fde.model.impl;
 
 import com.remainsoftware.fde.model.BREE;
+import com.remainsoftware.fde.model.Bundle;
 import com.remainsoftware.fde.model.IncludedBundleOrFragment;
-import com.remainsoftware.fde.model.Manifest;
 import com.remainsoftware.fde.model.ModelPackage;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -23,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link com.remainsoftware.fde.model.impl.IncludedBundleOrFragmentImpl#getIncluded <em>Included</em>}</li>
+ *   <li>{@link com.remainsoftware.fde.model.impl.IncludedBundleOrFragmentImpl#getBundleOrFragment <em>Bundle Or Fragment</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.impl.IncludedBundleOrFragmentImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.impl.IncludedBundleOrFragmentImpl#getDownloadSize <em>Download Size</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.impl.IncludedBundleOrFragmentImpl#getInstallationSize <em>Installation Size</em>}</li>
@@ -36,14 +33,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container implements IncludedBundleOrFragment {
 	/**
-	 * The cached value of the '{@link #getIncluded() <em>Included</em>}' containment reference.
+	 * The cached value of the '{@link #getBundleOrFragment() <em>Bundle Or Fragment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getIncluded()
+	 * @see #getBundleOrFragment()
 	 * @generated
 	 * @ordered
 	 */
-	protected Manifest included;
+	protected Bundle bundleOrFragment;
 
 	/**
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -159,8 +156,16 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Manifest getIncluded() {
-		return included;
+	public Bundle getBundleOrFragment() {
+		if (bundleOrFragment != null && bundleOrFragment.eIsProxy()) {
+			InternalEObject oldBundleOrFragment = (InternalEObject)bundleOrFragment;
+			bundleOrFragment = (Bundle)eResolveProxy(oldBundleOrFragment);
+			if (bundleOrFragment != oldBundleOrFragment) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT, oldBundleOrFragment, bundleOrFragment));
+			}
+		}
+		return bundleOrFragment;
 	}
 
 	/**
@@ -168,14 +173,8 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetIncluded(Manifest newIncluded, NotificationChain msgs) {
-		Manifest oldIncluded = included;
-		included = newIncluded;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED, oldIncluded, newIncluded);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Bundle basicGetBundleOrFragment() {
+		return bundleOrFragment;
 	}
 
 	/**
@@ -183,18 +182,11 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIncluded(Manifest newIncluded) {
-		if (newIncluded != included) {
-			NotificationChain msgs = null;
-			if (included != null)
-				msgs = ((InternalEObject)included).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED, null, msgs);
-			if (newIncluded != null)
-				msgs = ((InternalEObject)newIncluded).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED, null, msgs);
-			msgs = basicSetIncluded(newIncluded, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED, newIncluded, newIncluded));
+	public void setBundleOrFragment(Bundle newBundleOrFragment) {
+		Bundle oldBundleOrFragment = bundleOrFragment;
+		bundleOrFragment = newBundleOrFragment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT, oldBundleOrFragment, bundleOrFragment));
 	}
 
 	/**
@@ -332,8 +324,6 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
-				return basicSetIncluded(null, msgs);
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BREE:
 				return basicSetBree(null, msgs);
 		}
@@ -348,8 +338,9 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
-				return getIncluded();
+			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT:
+				if (resolve) return getBundleOrFragment();
+				return basicGetBundleOrFragment();
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__VERSION:
 				return getVersion();
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__DOWNLOAD_SIZE:
@@ -372,8 +363,8 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
-				setIncluded((Manifest)newValue);
+			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT:
+				setBundleOrFragment((Bundle)newValue);
 				return;
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__VERSION:
 				setVersion((String)newValue);
@@ -402,8 +393,8 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
-				setIncluded((Manifest)null);
+			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT:
+				setBundleOrFragment((Bundle)null);
 				return;
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__VERSION:
 				setVersion(VERSION_EDEFAULT);
@@ -432,8 +423,8 @@ public class IncludedBundleOrFragmentImpl extends MinimalEObjectImpl.Container i
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
-				return included != null;
+			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT:
+				return bundleOrFragment != null;
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__DOWNLOAD_SIZE:

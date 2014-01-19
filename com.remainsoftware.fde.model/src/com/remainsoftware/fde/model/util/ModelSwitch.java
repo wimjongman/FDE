@@ -95,6 +95,7 @@ public class ModelSwitch<T> extends Switch<T> {
 			case ModelPackage.FRAGMENT: {
 				Fragment fragment = (Fragment)theEObject;
 				T result = caseFragment(fragment);
+				if (result == null) result = caseBundle(fragment);
 				if (result == null) result = caseManifest(fragment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

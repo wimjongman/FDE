@@ -2,21 +2,13 @@
  */
 package com.remainsoftware.fde.model.provider;
 
-
 import java.util.Collection;
 import java.util.List;
 
-import com.remainsoftware.fde.model.IncludedBundleOrFragment;
-import com.remainsoftware.fde.model.ModelFactory;
-import com.remainsoftware.fde.model.ModelPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -28,24 +20,23 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import com.remainsoftware.fde.model.Bundle;
+import com.remainsoftware.fde.model.IncludedBundleOrFragment;
+import com.remainsoftware.fde.model.ModelFactory;
+import com.remainsoftware.fde.model.ModelPackage;
+
 /**
  * This is the item provider adapter for a {@link com.remainsoftware.fde.model.IncludedBundleOrFragment} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class IncludedBundleOrFragmentItemProvider
-	extends ItemProviderAdapter
-	implements
-		IEditingDomainItemProvider,
-		IStructuredItemContentProvider,
-		ITreeItemContentProvider,
-		IItemLabelProvider,
-		IItemPropertySource {
+public class IncludedBundleOrFragmentItemProvider extends ItemProviderAdapter
+		implements IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IncludedBundleOrFragmentItemProvider(AdapterFactory adapterFactory) {
@@ -53,9 +44,9 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -63,6 +54,7 @@ public class IncludedBundleOrFragmentItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addBundleOrFragmentPropertyDescriptor(object);
 			addVersionPropertyDescriptor(object);
 			addDownloadSizePropertyDescriptor(object);
 			addInstallationSizePropertyDescriptor(object);
@@ -72,9 +64,31 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Version feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Bundle Or Fragment feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addBundleOrFragmentPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IncludedBundleOrFragment_bundleOrFragment_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IncludedBundleOrFragment_bundleOrFragment_feature", "_UI_IncludedBundleOrFragment_type"),
+				 ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Version feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addVersionPropertyDescriptor(Object object) {
@@ -94,9 +108,9 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Download Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Download Size feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addDownloadSizePropertyDescriptor(Object object) {
@@ -116,9 +130,9 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Installation Size feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Installation Size feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addInstallationSizePropertyDescriptor(Object object) {
@@ -138,9 +152,9 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Unpack feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds a property descriptor for the Unpack feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void addUnpackPropertyDescriptor(Object object) {
@@ -163,23 +177,21 @@ public class IncludedBundleOrFragmentItemProvider
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED);
 			childrenFeatures.add(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__BREE);
 		}
 		return childrenFeatures;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -192,8 +204,8 @@ public class IncludedBundleOrFragmentItemProvider
 
 	/**
 	 * This returns IncludedBundleOrFragment.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -203,24 +215,25 @@ public class IncludedBundleOrFragmentItemProvider
 
 	/**
 	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((IncludedBundleOrFragment)object).getVersion();
-		return label == null || label.length() == 0 ?
-			getString("_UI_IncludedBundleOrFragment_type") :
-			getString("_UI_IncludedBundleOrFragment_type") + " " + label;
+		
+		Bundle bundle = (Bundle) ((IncludedBundleOrFragment)object).getBundleOrFragment();
+		if(bundle == null) {
+			return "<not set>";
+		}
+		return bundle.getId() + " (" + bundle.getName() + ")";
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -234,7 +247,6 @@ public class IncludedBundleOrFragmentItemProvider
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__UNPACK:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED:
 			case ModelPackage.INCLUDED_BUNDLE_OR_FRAGMENT__BREE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -243,35 +255,16 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
+	protected void collectNewChildDescriptors(
+			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED,
-				 ModelFactory.eINSTANCE.createManifest()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED,
-				 ModelFactory.eINSTANCE.createFeature()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED,
-				 ModelFactory.eINSTANCE.createBundle()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(ModelPackage.Literals.INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED,
-				 ModelFactory.eINSTANCE.createFragment()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -280,9 +273,9 @@ public class IncludedBundleOrFragmentItemProvider
 	}
 
 	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override

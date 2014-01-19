@@ -216,8 +216,36 @@ public class VersionItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
+				(ModelPackage.Literals.VERSION__BUNDLES,
+				 ModelFactory.eINSTANCE.createFragment()));
+
+		newChildDescriptors.add
+			(createChildParameter
 				(ModelPackage.Literals.VERSION__FRAGMENTS,
 				 ModelFactory.eINSTANCE.createFragment()));
+	}
+
+	/**
+	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
+		Object childFeature = feature;
+		Object childObject = child;
+
+		boolean qualify =
+			childFeature == ModelPackage.Literals.VERSION__BUNDLES ||
+			childFeature == ModelPackage.Literals.VERSION__FRAGMENTS;
+
+		if (qualify) {
+			return getString
+				("_UI_CreateChild_text2",
+				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
+		}
+		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 	/**

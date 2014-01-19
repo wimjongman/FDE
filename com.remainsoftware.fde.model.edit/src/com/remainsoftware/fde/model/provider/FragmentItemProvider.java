@@ -29,7 +29,7 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
  * @generated
  */
 public class FragmentItemProvider
-	extends ManifestItemProvider
+	extends BundleItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -168,6 +168,11 @@ public class FragmentItemProvider
 			(createChildParameter
 				(ModelPackage.Literals.FRAGMENT__PARENT_BUNDLE,
 				 ModelFactory.eINSTANCE.createBundle()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(ModelPackage.Literals.FRAGMENT__PARENT_BUNDLE,
+				 ModelFactory.eINSTANCE.createFragment()));
 	}
 
 }

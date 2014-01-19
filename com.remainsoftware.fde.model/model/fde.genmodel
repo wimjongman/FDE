@@ -100,7 +100,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Required/matchRule"/>
     </genClasses>
     <genClasses ecoreClass="fde.ecore#//IncludedBundleOrFragment">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//IncludedBundleOrFragment/included"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference fde.ecore#//IncludedBundleOrFragment/bundleOrFragment"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/version"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/downloadSize"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//IncludedBundleOrFragment/installationSize"/>

@@ -19,7 +19,7 @@ package com.remainsoftware.fde.model;
  * @model
  * @generated
  */
-public interface Fragment extends Manifest {
+public interface Fragment extends Bundle {
 	/**
 	 * Returns the value of the '<em><b>Parent Bundle</b></em>' containment reference.
 	 * <!-- begin-user-doc -->

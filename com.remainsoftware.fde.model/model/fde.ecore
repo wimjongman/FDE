@@ -27,14 +27,14 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="sitesToVisit" upperBound="-1"
         eType="#//SiteToVisit" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includedBundlesAndFragments"
-        upperBound="-1" eType="#//IncludedBundleOrFragment"/>
+        upperBound="-1" eType="#//IncludedBundleOrFragment" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="includedFeatures" upperBound="-1"
         eType="#//IncludedFeature" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="requiredFeatures" upperBound="-1"
         eType="#//Required"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bundle" eSuperTypes="#//Manifest"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Fragment" eSuperTypes="#//Manifest">
+  <eClassifiers xsi:type="ecore:EClass" name="Fragment" eSuperTypes="#//Bundle">
     <eStructuralFeatures xsi:type="ecore:EReference" name="parentBundle" lowerBound="1"
         eType="#//Bundle" containment="true"/>
   </eClassifiers>
@@ -64,8 +64,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="matchRule" eType="#//MATCH_RULE"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IncludedBundleOrFragment">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="included" lowerBound="1"
-        eType="#//Manifest" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="bundleOrFragment" lowerBound="1"
+        eType="#//Bundle" eKeys="#//Manifest/id"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="downloadSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="installationSize" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

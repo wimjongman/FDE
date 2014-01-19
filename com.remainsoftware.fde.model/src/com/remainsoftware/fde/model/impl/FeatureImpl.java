@@ -82,7 +82,7 @@ public class FeatureImpl extends ManifestImpl implements Feature {
 	protected EList<SiteToVisit> sitesToVisit;
 
 	/**
-	 * The cached value of the '{@link #getIncludedBundlesAndFragments() <em>Included Bundles And Fragments</em>}' reference list.
+	 * The cached value of the '{@link #getIncludedBundlesAndFragments() <em>Included Bundles And Fragments</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIncludedBundlesAndFragments()
@@ -278,7 +278,7 @@ public class FeatureImpl extends ManifestImpl implements Feature {
 	 */
 	public EList<IncludedBundleOrFragment> getIncludedBundlesAndFragments() {
 		if (includedBundlesAndFragments == null) {
-			includedBundlesAndFragments = new EObjectResolvingEList<IncludedBundleOrFragment>(IncludedBundleOrFragment.class, this, ModelPackage.FEATURE__INCLUDED_BUNDLES_AND_FRAGMENTS);
+			includedBundlesAndFragments = new EObjectContainmentEList<IncludedBundleOrFragment>(IncludedBundleOrFragment.class, this, ModelPackage.FEATURE__INCLUDED_BUNDLES_AND_FRAGMENTS);
 		}
 		return includedBundlesAndFragments;
 	}
@@ -323,6 +323,8 @@ public class FeatureImpl extends ManifestImpl implements Feature {
 				return basicSetLicenseAgreement(null, msgs);
 			case ModelPackage.FEATURE__SITES_TO_VISIT:
 				return ((InternalEList<?>)getSitesToVisit()).basicRemove(otherEnd, msgs);
+			case ModelPackage.FEATURE__INCLUDED_BUNDLES_AND_FRAGMENTS:
+				return ((InternalEList<?>)getIncludedBundlesAndFragments()).basicRemove(otherEnd, msgs);
 			case ModelPackage.FEATURE__INCLUDED_FEATURES:
 				return ((InternalEList<?>)getIncludedFeatures()).basicRemove(otherEnd, msgs);
 		}

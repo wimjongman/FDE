@@ -567,7 +567,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIncludedBundleOrFragment_Included() {
+	public EReference getIncludedBundleOrFragment_BundleOrFragment() {
 		return (EReference)includedBundleOrFragmentEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -775,7 +775,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(requiredEClass, REQUIRED__MATCH_RULE);
 
 		includedBundleOrFragmentEClass = createEClass(INCLUDED_BUNDLE_OR_FRAGMENT);
-		createEReference(includedBundleOrFragmentEClass, INCLUDED_BUNDLE_OR_FRAGMENT__INCLUDED);
+		createEReference(includedBundleOrFragmentEClass, INCLUDED_BUNDLE_OR_FRAGMENT__BUNDLE_OR_FRAGMENT);
 		createEAttribute(includedBundleOrFragmentEClass, INCLUDED_BUNDLE_OR_FRAGMENT__VERSION);
 		createEAttribute(includedBundleOrFragmentEClass, INCLUDED_BUNDLE_OR_FRAGMENT__DOWNLOAD_SIZE);
 		createEAttribute(includedBundleOrFragmentEClass, INCLUDED_BUNDLE_OR_FRAGMENT__INSTALLATION_SIZE);
@@ -825,7 +825,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		// Add supertypes to classes
 		featureEClass.getESuperTypes().add(this.getManifest());
 		bundleEClass.getESuperTypes().add(this.getManifest());
-		fragmentEClass.getESuperTypes().add(this.getManifest());
+		fragmentEClass.getESuperTypes().add(this.getBundle());
 		licenseAgreementEClass.getESuperTypes().add(this.getDescription());
 
 		// Initialize classes, features, and operations; add parameters
@@ -846,7 +846,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getFeature_CopyrightNotice(), this.getDescription(), null, "copyrightNotice", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_LicenseAgreement(), this.getLicenseAgreement(), null, "licenseAgreement", null, 0, 1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_SitesToVisit(), this.getSiteToVisit(), null, "sitesToVisit", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFeature_IncludedBundlesAndFragments(), this.getIncludedBundleOrFragment(), null, "includedBundlesAndFragments", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFeature_IncludedBundlesAndFragments(), this.getIncludedBundleOrFragment(), null, "includedBundlesAndFragments", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_IncludedFeatures(), this.getIncludedFeature(), null, "includedFeatures", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFeature_RequiredFeatures(), this.getRequired(), null, "requiredFeatures", null, 0, -1, Feature.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -879,7 +879,8 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getRequired_MatchRule(), this.getMATCH_RULE(), "matchRule", null, 0, 1, Required.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(includedBundleOrFragmentEClass, IncludedBundleOrFragment.class, "IncludedBundleOrFragment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIncludedBundleOrFragment_Included(), this.getManifest(), null, "included", null, 1, 1, IncludedBundleOrFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncludedBundleOrFragment_BundleOrFragment(), this.getBundle(), null, "bundleOrFragment", null, 1, 1, IncludedBundleOrFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getIncludedBundleOrFragment_BundleOrFragment().getEKeys().add(this.getManifest_Id());
 		initEAttribute(getIncludedBundleOrFragment_Version(), ecorePackage.getEString(), "version", null, 0, 1, IncludedBundleOrFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIncludedBundleOrFragment_DownloadSize(), ecorePackage.getEInt(), "downloadSize", null, 0, 1, IncludedBundleOrFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getIncludedBundleOrFragment_InstallationSize(), ecorePackage.getEInt(), "installationSize", null, 0, 1, IncludedBundleOrFragment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

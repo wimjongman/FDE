@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getIncluded <em>Included</em>}</li>
+ *   <li>{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getBundleOrFragment <em>Bundle Or Fragment</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getVersion <em>Version</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getDownloadSize <em>Download Size</em>}</li>
  *   <li>{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getInstallationSize <em>Installation Size</em>}</li>
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface IncludedBundleOrFragment extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Included</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Bundle Or Fragment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Included</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Bundle Or Fragment</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Included</em>' containment reference.
-	 * @see #setIncluded(Manifest)
-	 * @see com.remainsoftware.fde.model.ModelPackage#getIncludedBundleOrFragment_Included()
-	 * @model containment="true" required="true"
+	 * @return the value of the '<em>Bundle Or Fragment</em>' reference.
+	 * @see #setBundleOrFragment(Bundle)
+	 * @see com.remainsoftware.fde.model.ModelPackage#getIncludedBundleOrFragment_BundleOrFragment()
+	 * @model keys="id" required="true"
 	 * @generated
 	 */
-	Manifest getIncluded();
+	Bundle getBundleOrFragment();
 
 	/**
-	 * Sets the value of the '{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getIncluded <em>Included</em>}' containment reference.
+	 * Sets the value of the '{@link com.remainsoftware.fde.model.IncludedBundleOrFragment#getBundleOrFragment <em>Bundle Or Fragment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Included</em>' containment reference.
-	 * @see #getIncluded()
+	 * @param value the new value of the '<em>Bundle Or Fragment</em>' reference.
+	 * @see #getBundleOrFragment()
 	 * @generated
 	 */
-	void setIncluded(Manifest value);
+	void setBundleOrFragment(Bundle value);
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.

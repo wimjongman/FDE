@@ -122,7 +122,7 @@ public interface Feature extends Manifest {
 	EList<SiteToVisit> getSitesToVisit();
 
 	/**
-	 * Returns the value of the '<em><b>Included Bundles And Fragments</b></em>' reference list.
+	 * Returns the value of the '<em><b>Included Bundles And Fragments</b></em>' containment reference list.
 	 * The list contents are of type {@link com.remainsoftware.fde.model.IncludedBundleOrFragment}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -130,9 +130,9 @@ public interface Feature extends Manifest {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Included Bundles And Fragments</em>' reference list.
+	 * @return the value of the '<em>Included Bundles And Fragments</em>' containment reference list.
 	 * @see com.remainsoftware.fde.model.ModelPackage#getFeature_IncludedBundlesAndFragments()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<IncludedBundleOrFragment> getIncludedBundlesAndFragments();

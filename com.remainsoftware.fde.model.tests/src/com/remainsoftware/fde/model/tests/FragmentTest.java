@@ -13,7 +13,7 @@ import com.remainsoftware.fde.model.ModelFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class FragmentTest extends ManifestTest {
+public class FragmentTest extends BundleTest {
 
 	/**
 	 * <!-- begin-user-doc -->
