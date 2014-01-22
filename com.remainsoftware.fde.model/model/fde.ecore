@@ -115,4 +115,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="language" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ImportService" abstract="true">
+    <eOperations name="doImport">
+      <eParameters name="version" eType="#//Version"/>
+    </eOperations>
+    <eOperations name="getName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

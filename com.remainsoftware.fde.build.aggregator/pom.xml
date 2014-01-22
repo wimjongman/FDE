@@ -15,6 +15,7 @@
 		<!-- bundles -->
 		<module>../com.remainsoftware.fde.application</module>
 		<module>../com.remainsoftware.fde.ui</module>
+		<module>../com.remainsoftware.fde.workbench.core</module>
 		<module>../com.remainsoftware.fde.workbench.ui</module>
 		<module>../com.remainsoftware.fde.model</module>
 		<module>../com.remainsoftware.fde.model.edit</module>

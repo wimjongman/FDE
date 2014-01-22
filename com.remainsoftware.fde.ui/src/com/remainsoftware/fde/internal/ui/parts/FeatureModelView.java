@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Persist;
+import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -47,7 +48,7 @@ public class FeatureModelView {
 	}
 
 	@PostConstruct
-	public void postConstruct(Composite parent) {
+	public void postConstruct(Composite parent, EMenuService menuService) {
 		parent.setLayout(new GridLayout(2, false));
 
 		text = new Combo(parent, SWT.BORDER);
@@ -83,6 +84,9 @@ public class FeatureModelView {
 
 		treeViewer.setLabelProvider(labelProvider);
 		treeViewer.setContentProvider(contentProvider);
+
+		menuService.registerContextMenu(treeViewer.getControl(),
+				"com.remainsoftware.fde.application.part.0.popupmenu.0");
 
 	}
 

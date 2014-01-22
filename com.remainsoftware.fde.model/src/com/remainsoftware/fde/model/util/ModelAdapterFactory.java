@@ -116,6 +116,10 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 				return createBREEAdapter();
 			}
 			@Override
+			public Adapter caseImportService(ImportService object) {
+				return createImportServiceAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -300,6 +304,20 @@ public class ModelAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBREEAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.remainsoftware.fde.model.ImportService <em>Import Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.remainsoftware.fde.model.ImportService
+	 * @generated
+	 */
+	public Adapter createImportServiceAdapter() {
 		return null;
 	}
 

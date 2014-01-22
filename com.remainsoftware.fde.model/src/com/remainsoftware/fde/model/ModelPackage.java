@@ -5,6 +5,7 @@ package com.remainsoftware.fde.model;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -871,6 +872,52 @@ public interface ModelPackage extends EPackage {
 	int BREE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link com.remainsoftware.fde.model.impl.ImportServiceImpl <em>Import Service</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.remainsoftware.fde.model.impl.ImportServiceImpl
+	 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getImportService()
+	 * @generated
+	 */
+	int IMPORT_SERVICE = 12;
+
+	/**
+	 * The number of structural features of the '<em>Import Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_SERVICE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Do Import</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_SERVICE___DO_IMPORT__VERSION = 0;
+
+	/**
+	 * The operation id for the '<em>Get Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_SERVICE___GET_NAME = 1;
+
+	/**
+	 * The number of operations of the '<em>Import Service</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_SERVICE_OPERATION_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.OS <em>OS</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -878,7 +925,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getOS()
 	 * @generated
 	 */
-	int OS = 12;
+	int OS = 13;
 
 	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.ARCH <em>ARCH</em>}' enum.
@@ -888,7 +935,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getARCH()
 	 * @generated
 	 */
-	int ARCH = 13;
+	int ARCH = 14;
 
 	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.WS <em>WS</em>}' enum.
@@ -898,7 +945,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getWS()
 	 * @generated
 	 */
-	int WS = 14;
+	int WS = 15;
 
 	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.MATCH_RULE <em>MATCH RULE</em>}' enum.
@@ -908,7 +955,7 @@ public interface ModelPackage extends EPackage {
 	 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getMATCH_RULE()
 	 * @generated
 	 */
-	int MATCH_RULE = 15;
+	int MATCH_RULE = 16;
 
 
 	/**
@@ -1461,6 +1508,36 @@ public interface ModelPackage extends EPackage {
 	EAttribute getBREE_Language();
 
 	/**
+	 * Returns the meta object for class '{@link com.remainsoftware.fde.model.ImportService <em>Import Service</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import Service</em>'.
+	 * @see com.remainsoftware.fde.model.ImportService
+	 * @generated
+	 */
+	EClass getImportService();
+
+	/**
+	 * Returns the meta object for the '{@link com.remainsoftware.fde.model.ImportService#doImport(com.remainsoftware.fde.model.Version) <em>Do Import</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Do Import</em>' operation.
+	 * @see com.remainsoftware.fde.model.ImportService#doImport(com.remainsoftware.fde.model.Version)
+	 * @generated
+	 */
+	EOperation getImportService__DoImport__Version();
+
+	/**
+	 * Returns the meta object for the '{@link com.remainsoftware.fde.model.ImportService#getName() <em>Get Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Name</em>' operation.
+	 * @see com.remainsoftware.fde.model.ImportService#getName()
+	 * @generated
+	 */
+	EOperation getImportService__GetName();
+
+	/**
 	 * Returns the meta object for enum '{@link com.remainsoftware.fde.model.OS <em>OS</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1954,6 +2031,32 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BREE__LANGUAGE = eINSTANCE.getBREE_Language();
+
+		/**
+		 * The meta object literal for the '{@link com.remainsoftware.fde.model.impl.ImportServiceImpl <em>Import Service</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.remainsoftware.fde.model.impl.ImportServiceImpl
+		 * @see com.remainsoftware.fde.model.impl.ModelPackageImpl#getImportService()
+		 * @generated
+		 */
+		EClass IMPORT_SERVICE = eINSTANCE.getImportService();
+
+		/**
+		 * The meta object literal for the '<em><b>Do Import</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IMPORT_SERVICE___DO_IMPORT__VERSION = eINSTANCE.getImportService__DoImport__Version();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IMPORT_SERVICE___GET_NAME = eINSTANCE.getImportService__GetName();
 
 		/**
 		 * The meta object literal for the '{@link com.remainsoftware.fde.model.OS <em>OS</em>}' enum.

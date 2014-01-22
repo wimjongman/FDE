@@ -2,31 +2,5 @@
 <?eclipse version="3.4"?>
 <plugin>
 
-   <extension
-         point="org.eclipse.ui.views">
-      <category
-            name="FDE"
-            id="com.remainsoftware.fde.workbench.viewcategory">
-      </category>
-      <e4view
-            category="com.remainsoftware.fde.workbench.viewcategory"
-            class="com.remainsoftware.fde.internal.ui.parts.FeatureModelView"
-            id="com.remainsoftware.fde.internal.workbench.ui.modelView"
-            name="Feature Model"
-            restorable="true">
-      </e4view>
-   </extension>
-   <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.jdt.ui.JavaPerspective">
-         <view
-               ratio="0.5"
-               relative="org.eclipse.jdt.ui.PackageExplorer"
-               relationship="stack"
-               id="com.remainsoftware.fde.internal.workbench.ui.modelView">
-         </view>
-      </perspectiveExtension>
-   </extension>
 
 </plugin>

@@ -6,6 +6,7 @@ import com.remainsoftware.fde.model.Bundle;
 import com.remainsoftware.fde.model.Description;
 import com.remainsoftware.fde.model.Feature;
 import com.remainsoftware.fde.model.Fragment;
+import com.remainsoftware.fde.model.ImportService;
 import com.remainsoftware.fde.model.IncludedBundleOrFragment;
 import com.remainsoftware.fde.model.IncludedFeature;
 import com.remainsoftware.fde.model.LicenseAgreement;
@@ -18,6 +19,7 @@ import com.remainsoftware.fde.model.Version;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -112,6 +114,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * @generated
 	 */
 	private EClass breeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass importServiceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -666,6 +675,33 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImportService() {
+		return importServiceEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getImportService__DoImport__Version() {
+		return importServiceEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getImportService__GetName() {
+		return importServiceEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getOS() {
 		return osEEnum;
 	}
@@ -788,6 +824,10 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEAttribute(breeEClass, BREE__OPERATING_SYSTEM);
 		createEAttribute(breeEClass, BREE__LANGUAGE);
 
+		importServiceEClass = createEClass(IMPORT_SERVICE);
+		createEOperation(importServiceEClass, IMPORT_SERVICE___DO_IMPORT__VERSION);
+		createEOperation(importServiceEClass, IMPORT_SERVICE___GET_NAME);
+
 		// Create enums
 		osEEnum = createEEnum(OS);
 		archEEnum = createEEnum(ARCH);
@@ -892,6 +932,13 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEAttribute(getBREE_Architecture(), this.getARCH(), "architecture", null, 0, -1, com.remainsoftware.fde.model.BREE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBREE_OperatingSystem(), this.getOS(), "operatingSystem", null, 0, -1, com.remainsoftware.fde.model.BREE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBREE_Language(), ecorePackage.getEString(), "language", null, 0, -1, com.remainsoftware.fde.model.BREE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(importServiceEClass, ImportService.class, "ImportService", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		EOperation op = initEOperation(getImportService__DoImport__Version(), null, "doImport", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getVersion(), "version", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getImportService__GetName(), ecorePackage.getEString(), "getName", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(osEEnum, com.remainsoftware.fde.model.OS.class, "OS");
