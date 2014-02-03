@@ -31,6 +31,7 @@ public class FdeAllTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new FdeAllTests("Fde Tests");
+		suite.addTest(ModelTests.suite());
 		return suite;
 	}
 

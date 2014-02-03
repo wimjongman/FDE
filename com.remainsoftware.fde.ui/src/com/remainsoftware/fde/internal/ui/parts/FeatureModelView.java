@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Persist;
 import org.eclipse.e4.ui.workbench.swt.modeling.EMenuService;
 import org.eclipse.emf.common.util.URI;
@@ -17,6 +18,7 @@ import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.layout.TreeColumnLayout;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -30,6 +32,7 @@ import org.eclipse.swt.widgets.Tree;
 
 import com.remainsoftware.fde.model.ModelFactory;
 import com.remainsoftware.fde.model.ModelPackage;
+import com.remainsoftware.fde.model.Version;
 
 public class FeatureModelView {
 	private Combo text;
@@ -37,14 +40,15 @@ public class FeatureModelView {
 
 	@Inject
 	Shell shell;
+	@Inject
+	IEclipseContext context;
 	private Resource resource;
 
 	@Inject
 	public FeatureModelView() {
 		ModelPackage modelPackage = ModelFactory.eINSTANCE.getModelPackage();
 		ResourceSetImpl resourceSetI = new ResourceSetImpl();
-		resourceSetI.getPackageRegistry().put(modelPackage.getNsURI(),
-				modelPackage);
+		resourceSetI.getPackageRegistry().put(modelPackage.getNsURI(), modelPackage);
 	}
 
 	@PostConstruct
@@ -66,8 +70,7 @@ public class FeatureModelView {
 		btnNewButton.setText("Load Model");
 
 		Composite composite = new Composite(parent, SWT.NONE);
-		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2,
-				1));
+		composite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true, 2, 1));
 		composite.setLayout(new TreeColumnLayout());
 
 		treeViewer = new TreeViewer(composite, SWT.BORDER);
@@ -88,6 +91,8 @@ public class FeatureModelView {
 		menuService.registerContextMenu(treeViewer.getControl(),
 				"com.remainsoftware.fde.application.part.0.popupmenu.0");
 
+		context.modify(Viewer.class, treeViewer);
+
 	}
 
 	protected void setInput(SelectionEvent event) {
@@ -100,7 +105,9 @@ public class FeatureModelView {
 			resource = c.createResource(URI.createURI(uri.toString()));
 			try {
 				resource.load(null);
-				treeViewer.setInput(resource.getAllContents().next());
+				Version version = (Version) resource.getAllContents().next();
+				context.modify(Version.class, version);
+				treeViewer.setInput(version);
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

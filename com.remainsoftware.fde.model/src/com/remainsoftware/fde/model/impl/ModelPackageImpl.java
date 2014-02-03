@@ -261,6 +261,15 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getVersion__FindManifest__String() {
+		return versionEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getManifest() {
 		return manifestEClass;
 	}
@@ -766,6 +775,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		createEReference(versionEClass, VERSION__FEATURES);
 		createEReference(versionEClass, VERSION__BUNDLES);
 		createEReference(versionEClass, VERSION__FRAGMENTS);
+		createEOperation(versionEClass, VERSION___FIND_MANIFEST__STRING);
 
 		manifestEClass = createEClass(MANIFEST);
 		createEAttribute(manifestEClass, MANIFEST__ID);
@@ -875,6 +885,9 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 		initEReference(getVersion_Bundles(), this.getBundle(), null, "bundles", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVersion_Fragments(), this.getFragment(), null, "fragments", null, 0, -1, Version.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getVersion__FindManifest__String(), this.getManifest(), "findManifest", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "Id", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(manifestEClass, Manifest.class, "Manifest", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getManifest_Id(), ecorePackage.getEString(), "id", null, 0, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getManifest_Version(), ecorePackage.getEString(), "version", null, 0, 1, Manifest.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -935,7 +948,7 @@ public class ModelPackageImpl extends EPackageImpl implements ModelPackage {
 
 		initEClass(importServiceEClass, ImportService.class, "ImportService", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		EOperation op = initEOperation(getImportService__DoImport__Version(), null, "doImport", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = initEOperation(getImportService__DoImport__Version(), null, "doImport", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, this.getVersion(), "version", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getImportService__GetName(), ecorePackage.getEString(), "getName", 0, 1, IS_UNIQUE, IS_ORDERED);

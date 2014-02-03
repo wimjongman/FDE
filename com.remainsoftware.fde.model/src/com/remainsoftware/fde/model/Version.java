@@ -100,4 +100,12 @@ public interface Version extends EObject {
 	 */
 	EList<Fragment> getFragments();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Manifest findManifest(String Id);
+
 } // Version

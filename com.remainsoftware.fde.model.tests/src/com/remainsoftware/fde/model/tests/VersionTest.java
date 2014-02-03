@@ -13,6 +13,12 @@ import com.remainsoftware.fde.model.Version;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Version</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link com.remainsoftware.fde.model.Version#findManifest(java.lang.String) <em>Find Manifest</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class VersionTest extends TestCase {
@@ -84,6 +90,19 @@ public class VersionTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link com.remainsoftware.fde.model.Version#findManifest(java.lang.String) <em>Find Manifest</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.remainsoftware.fde.model.Version#findManifest(java.lang.String)
+	 * @generated
+	 */
+	public void testFindManifest__String() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //VersionTest

@@ -114,13 +114,22 @@ public interface ModelPackage extends EPackage {
 	int VERSION_FEATURE_COUNT = 4;
 
 	/**
+	 * The operation id for the '<em>Find Manifest</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VERSION___FIND_MANIFEST__STRING = 0;
+
+	/**
 	 * The number of operations of the '<em>Version</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VERSION_OPERATION_COUNT = 0;
+	int VERSION_OPERATION_COUNT = 1;
 
 	/**
 	 * The meta object id for the '{@link com.remainsoftware.fde.model.impl.ManifestImpl <em>Manifest</em>}' class.
@@ -1013,6 +1022,16 @@ public interface ModelPackage extends EPackage {
 	EReference getVersion_Fragments();
 
 	/**
+	 * Returns the meta object for the '{@link com.remainsoftware.fde.model.Version#findManifest(java.lang.String) <em>Find Manifest</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Manifest</em>' operation.
+	 * @see com.remainsoftware.fde.model.Version#findManifest(java.lang.String)
+	 * @generated
+	 */
+	EOperation getVersion__FindManifest__String();
+
+	/**
 	 * Returns the meta object for class '{@link com.remainsoftware.fde.model.Manifest <em>Manifest</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1641,6 +1660,14 @@ public interface ModelPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VERSION__FRAGMENTS = eINSTANCE.getVersion_Fragments();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Manifest</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation VERSION___FIND_MANIFEST__STRING = eINSTANCE.getVersion__FindManifest__String();
 
 		/**
 		 * The meta object literal for the '{@link com.remainsoftware.fde.model.impl.ManifestImpl <em>Manifest</em>}' class.

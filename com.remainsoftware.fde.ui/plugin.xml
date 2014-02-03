@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="com.remainsoftware.e4.model.importer.modelimport">
+      <model
+            elementId="com.remainsoftware.fde.application.part.0"
+            fragment="false"
+            modelURI="platform:/plugin/com.remainsoftware.fde.application/Application.e4xmi"
+            referenceId="org.eclipse.jdt.ui.PackageExplorer"
+            relationship="second">
+      </model>
+   </extension>
+
+</plugin>

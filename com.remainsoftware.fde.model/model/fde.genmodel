@@ -46,6 +46,7 @@
           ecoreFeature="ecore:EReference fde.ecore#//Version/features"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//Version/bundles"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference fde.ecore#//Version/fragments"/>
+      <genOperations ecoreOperation="fde.ecore#//Version/findManifest"/>
     </genClasses>
     <genClasses ecoreClass="fde.ecore#//Manifest">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute fde.ecore#//Manifest/id"/>
@@ -112,6 +113,12 @@
       <genFeatures children="true" createChild="true" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/architecture"/>
       <genFeatures children="true" createChild="true" propertyCategory="" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/operatingSystem"/>
       <genFeatures children="true" createChild="true" propertyDescription="" ecoreFeature="ecore:EAttribute fde.ecore#//BREE/language"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="fde.ecore#//ImportService">
+      <genOperations ecoreOperation="fde.ecore#//ImportService/doImport">
+        <genParameters ecoreParameter="fde.ecore#//ImportService/doImport/version"/>
+      </genOperations>
+      <genOperations ecoreOperation="fde.ecore#//ImportService/getName"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

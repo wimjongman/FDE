@@ -23,11 +23,11 @@ public class DynamicImportMenu {
 	public void aboutToShow(Shell shell, List<MMenuElement> items, IEclipseContext context) {
 
 		try {
-			MDirectMenuItem dynamicItem = MMenuFactory.INSTANCE.createDirectMenuItem();
 			BundleContext bc = FrameworkUtil.getBundle(getClass()).getBundleContext();
 			Collection<ServiceReference<ImportService>> serviceReferences = bc
 					.getServiceReferences(ImportService.class, null);
 			for (ServiceReference<ImportService> ref : serviceReferences) {
+				MDirectMenuItem dynamicItem = MMenuFactory.INSTANCE.createDirectMenuItem();
 				ImportService importService = bc.getService(ref);
 				dynamicItem.setLabel(importService.getName());
 				dynamicItem.setContributorURI("platform:/plugin/"

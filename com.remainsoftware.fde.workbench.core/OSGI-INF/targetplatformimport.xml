@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="FDE Target Platform Import Service">
+   <implementation class="com.remainsoftware.fde.internal.workbench.core.TargetPlatformImport"/>
+   <service>
+      <provide interface="com.remainsoftware.fde.model.ImportService"/>
+   </service>
+</scr:component>

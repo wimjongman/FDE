@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FDE UI
-Bundle-SymbolicName: com.remainsoftware.fde.ui
+Bundle-SymbolicName: com.remainsoftware.fde.ui;singleton:=true
 Bundle-Version: 0.1.0.qualifier
 Bundle-Vendor: Remain Software
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
