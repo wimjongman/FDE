@@ -103,9 +103,13 @@ public class FeatureModelView {
 			URI uri = URI.createURI(text.getText());
 			XMIResourceFactoryImpl c = new XMIResourceFactoryImpl();
 			resource = c.createResource(URI.createURI(uri.toString()));
+			if (!context.containsKey(Resource.class))
+				context.modify(Resource.class, resource);
+
 			try {
 				resource.load(null);
 				Version version = (Version) resource.getAllContents().next();
+				context.remove(Version.class);
 				context.modify(Version.class, version);
 				treeViewer.setInput(version);
 			} catch (IOException e) {

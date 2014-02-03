@@ -117,13 +117,16 @@ public class WorkspaceImport extends ImportServiceImpl {
 				return null;
 		}
 		Bundle bundle = ModelFactory.eINSTANCE.createBundle();
-		IPluginModelBase entry = PDECore.getDefault().getModelManager().findModel(id);
-		BundleDescription bundleDescription = entry.getBundleDescription();
 		bundle.setId(id);
-		bundle.setName(bundleDescription.getName());
-		bundle.setVendor(bundleDescription.getSupplier().getName());
-		bundle.setVersion(bundleDescription.getVersion().toString());
 		version.getBundles().add(bundle);
+
+		IPluginModelBase entry = PDECore.getDefault().getModelManager().findModel(id);
+		if (entry != null) {
+			BundleDescription bundleDescription = entry.getBundleDescription();
+			bundle.setName(bundleDescription.getName());
+			bundle.setVendor(bundleDescription.getSupplier().getName());
+			bundle.setVersion(bundleDescription.getVersion().toString());
+		}
 		return bundle;
 	}
 
@@ -135,18 +138,21 @@ public class WorkspaceImport extends ImportServiceImpl {
 			else
 				return null;
 		}
+		Fragment fragment = ModelFactory.eINSTANCE.createFragment();
+		fragment.setId(Id);
+		version.getFragments().add(fragment);
+
 		IPluginModelBase entry = PDECore.getDefault().getModelManager().findModel(Id);
 
-		BundleDescription bundleDescription = entry.getBundleDescription().getHost().getBundle();
-		Bundle bundle = addBundle(version, bundleDescription.getSymbolicName());
-
-		Fragment fragment = ModelFactory.eINSTANCE.createFragment();
-		fragment.setId(bundleDescription.getSymbolicName());
-		fragment.setName(bundleDescription.getName());
-		fragment.setParentBundle(bundle);
-		fragment.setVendor(bundleDescription.getSupplier().getName());
-		fragment.setVersion(bundleDescription.getVersion().toString());
-		version.getFragments().add(fragment);
+		if (entry != null) {
+			BundleDescription bundleDescription = entry.getBundleDescription().getHost()
+.getHosts()[0];
+			Bundle bundle = addBundle(version, bundleDescription.getSymbolicName());
+			fragment.setName(bundleDescription.getName());
+			fragment.setParentBundle(bundle);
+			fragment.setVendor(bundleDescription.getSupplier().getName());
+			fragment.setVersion(bundleDescription.getVersion().toString());
+		}
 		return fragment;
 	}
 

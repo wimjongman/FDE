@@ -7,6 +7,7 @@
           <children xsi:type="basic:Part" xmi:id="_WOPboH6dEeOLU6wX0fCO_g" elementId="com.remainsoftware.fde.application.part.0" contributionURI="bundleclass://com.remainsoftware.fde.ui/com.remainsoftware.fde.internal.ui.parts.FeatureModelView" label="Feature Model" iconURI="platform:/plugin/com.remainsoftware.fde.application/icons/save_edit.png" tooltip="Tippie" closeable="true">
             <menus xsi:type="menu:PopupMenu" xmi:id="_V-d5kIInEeO5e4y-bx6q3w" elementId="com.remainsoftware.fde.application.part.0.popupmenu.0">
               <children xsi:type="menu:DynamicMenuContribution" xmi:id="_YqmIoIInEeO5e4y-bx6q3w" elementId="com.remainsoftware.fde.application.part.0.popupmenu.0.dynamicmenucontribution.0" label="Import" contributionURI="bundleclass://com.remainsoftware.fde.ui/com.remainsoftware.fde.internal.ui.parts.DynamicImportMenu"/>
+              <children xsi:type="menu:DirectMenuItem" xmi:id="_dZ-PIIxqEeOBv8sRUME1sQ" elementId="com.remainsoftware.fde.application.directmenuitem.0" label="Save Model..." contributionURI="bundleclass://com.remainsoftware.fde.ui/com.remainsoftware.fde.internal.ui.parts.SaveHandler"/>
             </menus>
             <toolbar xmi:id="_EcydIH6mEeOLU6wX0fCO_g" elementId="com.remainsoftware.fde.application.toolbar.0">
               <children xsi:type="menu:ToolControl" xmi:id="_FC_hgH6mEeOLU6wX0fCO_g" elementId="com.remainsoftware.fde.application.toolcontrol.0"/>
